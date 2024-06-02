@@ -11,10 +11,10 @@ namespace Calculator
         public static int a = 0;
         public static int b = 0;
         public static int c = 0;
-        public static string opertator1 = "+";
-        public static string opertator2 = "-";
-        public static string opertator3 = "*";
-        public static string opertator4 = "/";
+        public static string operator1 = "+";
+        public static string operator2 = "-";
+        public static string operator3 = "*";
+        public static string operator4 = "/";
         public static int Input()
         {
             int x;
@@ -24,11 +24,6 @@ namespace Calculator
             }
 
             return x;
-        }
-        public static void Output(int c)
-        {
-            int x = c;
-            Console.WriteLine($"{x}");
         }
         public static int MenuOption() 
         {
@@ -53,26 +48,26 @@ namespace Calculator
                         a = EnterNumber();
                         b = EnterNumber();
                         c = CalculatorFunctions.Addition(a, b);
-                        History.Log(a, opertator1, b, c);
+                        History.Log(a, operator1, b, c);
 
                         break;
                     case 2:
                         a = EnterNumber();
                         b = EnterNumber();
                         c = CalculatorFunctions.Subtraction(a, b);
-                        History.Log(a, opertator2, b, c);
+                        History.Log(a, operator2, b, c);
                         break;
                     case 3:
                         a = EnterNumber();
                         b = EnterNumber();
                         c = CalculatorFunctions.Multiplication(a, b);
-                        History.Log(a, opertator3, b, c);
+                        History.Log(a, operator3, b, c);
                         break;
                     case 4:
                         a = EnterNumber();
                         b = EnterNumber();
                         c = CalculatorFunctions.Division(a, b);
-                        History.Log(a, opertator4, b, c);
+                        History.Log(a, operator4, b, c);
                         break;
                     case 5:
                         History.PrintLogs();
