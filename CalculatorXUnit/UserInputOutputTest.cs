@@ -39,5 +39,34 @@ namespace CalculatorXUnit
             Assert.Contains("Logs:", output);
             Assert.Contains("30 - 15 = 15", output);
         }
+        [Fact]
+        public void User_ShouldBeAbleToExit()
+        {
+            
+            var inputReader = new StringReader("7\n");
+            var outputWriter = new StringWriter();
+            Console.SetIn(inputReader);
+            Console.SetOut(outputWriter);
+
+            UserInputOutput.Menu();
+
+            var output = outputWriter.ToString();
+            Assert.DoesNotContain("Enter a valid number 1-7", output);
+        }
+        [Fact]
+        public void User_ShouldBeAbleToViewLogs()
+        {
+            
+            var inputReader = new StringReader("1\n10\n20\n5\n7\n");
+            var outputWriter = new StringWriter();
+            Console.SetIn(inputReader);
+            Console.SetOut(outputWriter);
+            
+            UserInputOutput.Menu();
+            
+            var output = outputWriter.ToString();
+            Assert.Contains("Logs:", output);
+            Assert.Contains("10 + 20 = 30", output);
+        }
     }
 }
